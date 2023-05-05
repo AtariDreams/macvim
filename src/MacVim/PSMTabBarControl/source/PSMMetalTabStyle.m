@@ -113,7 +113,7 @@ void MyNSDrawWindowBackground(NSRect rect)
     result.origin.x = cellFrame.origin.x + MARGIN_X;
     result.origin.y = cellFrame.origin.y + MARGIN_Y + 2.0;
     
-    if([cell state] == NSOnState){
+    if([cell state] == NSControlStateValueOn){
         result.origin.y -= 1;
     }
     
@@ -136,7 +136,7 @@ void MyNSDrawWindowBackground(NSRect rect)
     if([cell hasCloseButton] && ![cell isCloseButtonSuppressed])
         result.origin.x += [metalCloseButton size].width + kPSMTabBarCellPadding;
     
-    if([cell state] == NSOnState){
+    if([cell state] == NSControlStateValueOn){
         result.origin.y += 1;
     }
     
@@ -156,7 +156,7 @@ void MyNSDrawWindowBackground(NSRect rect)
     result.origin.x = cellFrame.origin.x + cellFrame.size.width - MARGIN_X - kPSMTabBarIndicatorWidth;
     result.origin.y = cellFrame.origin.y + MARGIN_Y;
     
-    if([cell state] == NSOnState){
+    if([cell state] == NSControlStateValueOn){
         result.origin.y -= 1;
     }
     
@@ -289,7 +289,7 @@ void MyNSDrawWindowBackground(NSRect rect)
     NSShadow* shadow;
     shadow = [[[NSShadow alloc] init] autorelease];
     float shadowAlpha;
-    if(([cell state] == NSOnState) || [cell isHighlighted]){
+    if(([cell state] == NSControlStateValueOn) || [cell isHighlighted]){
         shadowAlpha = 0.8;
     } else {
         shadowAlpha = 0.5;
@@ -320,7 +320,7 @@ void MyNSDrawWindowBackground(NSRect rect)
     NSBezierPath* bezier = [NSBezierPath bezierPath];
     lineColor = [NSColor darkGrayColor];
 
-    if ([cell state] == NSOnState) {
+    if ([cell state] == NSControlStateValueOn) {
         // selected tab
         NSRect aRect = NSMakeRect(cellFrame.origin.x, cellFrame.origin.y, cellFrame.size.width, cellFrame.size.height-2.5);
         aRect.size.height -= 0.5;
@@ -419,7 +419,7 @@ void MyNSDrawWindowBackground(NSRect rect)
         [[NSColor colorWithCalibratedWhite:0.3 alpha:0.6] set];
         NSBezierPath *path = [NSBezierPath bezierPath];
         NSRect myRect = [self objectCounterRectForTabCell:cell];
-        if([cell state] == NSOnState)
+        if([cell state] == NSControlStateValueOn)
             myRect.origin.y -= 1.0;
         [path moveToPoint:NSMakePoint(myRect.origin.x + kPSMMetalObjectCounterRadius, myRect.origin.y)];
         [path lineToPoint:NSMakePoint(myRect.origin.x + myRect.size.width - kPSMMetalObjectCounterRadius, myRect.origin.y)];
@@ -444,7 +444,7 @@ void MyNSDrawWindowBackground(NSRect rect)
     labelRect.size.height = cellFrame.size.height;
     labelRect.origin.y = cellFrame.origin.y + MARGIN_Y + 1.0;
     
-    if([cell state] == NSOnState){
+    if([cell state] == NSControlStateValueOn){
         labelRect.origin.y -= 1;
     }
     

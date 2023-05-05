@@ -799,7 +799,7 @@
 
             // selected? set tab states...
             if([tvi isEqualTo:[tabView selectedTabViewItem]]){
-                [cell setState:NSOnState];
+                [cell setState:NSControlStateValueOn];
                 tabState |= PSMTab_SelectedMask;
                 // previous cell
                 if(i > 0){
@@ -807,10 +807,10 @@
                 }
                 // next cell - see below
             } else {
-                [cell setState:NSOffState];
+                [cell setState:NSControlStateValueOff];
                 // see if prev cell was selected
                 if(i > 0){
-                    if([[_cells objectAtIndex:i-1] state] == NSOnState){
+                    if([[_cells objectAtIndex:i-1] state] == NSControlStateValueOn){
                         tabState |= PSMTab_LeftIsSelectedMask;
                     }
                 }
@@ -851,7 +851,7 @@
             [cell setIsInOverflowMenu:YES];
             [[cell indicator] removeFromSuperview];
             if ([tvi isEqualTo:[tabView selectedTabViewItem]])
-                [menuItem setState:NSOnState];
+                [menuItem setState:NSControlStateValueOn];
             if([cell hasIcon])
                 [menuItem setImage:[[[tvi identifier] content] icon]];
             if([cell count] > 0)

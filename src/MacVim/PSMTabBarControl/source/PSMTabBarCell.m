@@ -325,7 +325,7 @@
 
 - (NSImage*)dragImageForRect:(NSRect)cellFrame
 {
-    if(([self state] == NSOnState) && ([[self.controlView styleName] isEqualToString:@"Metal"]))
+    if(([self state] == NSControlStateValueOn) && ([[self.controlView styleName] isEqualToString:@"Metal"]))
         cellFrame.size.width += 1.0;
     [self.controlView lockFocus];
 
@@ -343,7 +343,7 @@
         NSImage *pi = [[NSImage alloc] initByReferencingFile:[[PSMTabBarControl bundle] pathForImageResource:@"pi"]];
         [returnImage lockFocus];
         NSPoint indicatorPoint = NSMakePoint([self frame].size.width - MARGIN_X - kPSMTabBarIndicatorWidth, MARGIN_Y);
-        if(([self state] == NSOnState) && ([[self.controlView styleName] isEqualToString:@"Metal"]))
+        if(([self state] == NSControlStateValueOn) && ([[self.controlView styleName] isEqualToString:@"Metal"]))
             indicatorPoint.y += 1.0;
         [pi drawAtPoint:indicatorPoint fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:0.7];
         [returnImage unlockFocus];

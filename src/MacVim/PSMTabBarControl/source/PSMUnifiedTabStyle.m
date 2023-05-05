@@ -289,7 +289,7 @@
     NSBezierPath* bezier = [NSBezierPath bezierPath];
     lineColor = [NSColor colorWithCalibratedWhite:0.576 alpha:1.0];
 
-    if ([cell state] == NSOnState)
+    if ([cell state] == NSControlStateValueOn)
 	{
         // selected tab
         NSRect aRect = NSMakeRect(cellFrame.origin.x+0.5, cellFrame.origin.y-0.5, cellFrame.size.width-1.0, cellFrame.size.height);

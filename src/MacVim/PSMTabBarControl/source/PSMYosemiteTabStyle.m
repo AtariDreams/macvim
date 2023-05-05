@@ -143,7 +143,7 @@ void YosemiteNSDrawWindowBackground(NSRect rect, NSColor *color)
     if([cell hasCloseButton] && ![cell isCloseButtonSuppressed])
         result.origin.x += [closeButton size].width + kPSMTabBarCellPadding;
 
-    if([cell state] == NSOnState){
+    if([cell state] == NSControlStateValueOn){
         result.origin.y += 1;
     }
 
@@ -163,7 +163,7 @@ void YosemiteNSDrawWindowBackground(NSRect rect, NSColor *color)
     result.origin.x = cellFrame.origin.x + cellFrame.size.width - MARGIN_X - kPSMTabBarIndicatorWidth;
     result.origin.y = cellFrame.origin.y + MARGIN_Y;
 
-    if([cell state] == NSOnState){
+    if([cell state] == NSControlStateValueOn){
         result.origin.y -= 1;
     }
 
@@ -295,7 +295,7 @@ void YosemiteNSDrawWindowBackground(NSRect rect, NSColor *color)
     BOOL isKeyWindow = [bar.window isKeyWindow];
 
     CGFloat textAlpha;
-    if ([cell state] == NSOnState) {
+    if ([cell state] == NSControlStateValueOn) {
         textAlpha = (isKeyWindow) ? 1.0f : 0.5f;
     } else {
         textAlpha = (isKeyWindow) ? 0.5f : 0.25f;
@@ -325,7 +325,7 @@ void YosemiteNSDrawWindowBackground(NSRect rect, NSColor *color)
     NSBezierPath* bezier = [NSBezierPath bezierPath];
     lineColor = [self borderColor];
 
-    if ([cell state] == NSOnState) {
+    if ([cell state] == NSControlStateValueOn) {
         // selected tab
         NSRect aRect = NSMakeRect(cellFrame.origin.x, cellFrame.origin.y, cellFrame.size.width, cellFrame.size.height);
 
