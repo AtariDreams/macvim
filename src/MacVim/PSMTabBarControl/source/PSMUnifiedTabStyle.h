@@ -9,18 +9,21 @@
 #import <Cocoa/Cocoa.h>
 #import "PSMTabStyle.h"
 
-@interface PSMUnifiedTabStyle : NSObject <PSMTabStyle>
-{
-    NSImage *unifiedCloseButton;
-    NSImage *unifiedCloseButtonDown;
-    NSImage *unifiedCloseButtonOver;
-    NSImage *_addTabButtonImage;
-    NSImage *_addTabButtonPressedImage;
-    NSImage *_addTabButtonRolloverImage;
-    NSMutableParagraphStyle *truncatingTailParagraphStyle;
-    NSMutableParagraphStyle *centeredParagraphStyle;
-	
-    float leftMargin;
+@interface PSMUnifiedTabStyle : NSObject <PSMTabStyle> {
+
+	NSImage				*unifiedCloseButton;
+	NSImage				*unifiedCloseButtonDown;
+	NSImage				*unifiedCloseButtonOver;
+	NSImage				*unifiedCloseDirtyButton;
+	NSImage				*unifiedCloseDirtyButtonDown;
+	NSImage				*unifiedCloseDirtyButtonOver;
+	NSImage				*_addTabButtonImage;
+	NSImage				*_addTabButtonPressedImage;
+	NSImage				*_addTabButtonRolloverImage;
+
+	CGFloat				_leftMargin;
 }
-- (void)setLeftMarginForTabBarControl:(float)margin;
+
+@property (assign) CGFloat leftMarginForTabBarControl;
+
 @end
